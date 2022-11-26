@@ -5,6 +5,44 @@
     border-radius: 10px;
 }
 
+.section-bikes
+{
+    margin-top: 100px;
+}
+
+.section-bikes .bike-img
+{
+    width: 100%;
+}
+.section-bikes .bike-img img
+{
+    width: 100%;
+    border: 2px solid #F6992B;
+}
+.section-bikes .text 
+{
+    padding-left: 20px;
+}
+.section-bikes .text h2
+{
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.774);
+}
+.section-bikes .text p{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.63);
+}
+.section-bikes .text h5
+{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.767);
+}
+.section-bikes .text svg
+{
+    margin-right: 10px;
+    color: #ecb130;
+}
 @media screen and (max-width:576px) {
     .slide img
     {
@@ -14,4 +52,20 @@
     {
         font-size: 10px;
     }
+    .section-bikes .text 
+{
+    padding-left: 3px;
+}
+.section-bikes .text h2
+{
+    font-size: 25px;
+    margin-top: 10px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.774);
+}
+.section-bikes .text h5
+{
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.767);
+}
 }
