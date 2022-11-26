@@ -4,7 +4,7 @@
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 14px;
-    background: #ecf0f3;
+    background: #3a3a3a;
     box-shadow: 13px 13px 20px #cbced1,
                 -13px -13px 20px #ffffff;
     padding: 30px 20px;
@@ -16,11 +16,11 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #202C45;
+    color: white;
 }
 .form label
 {
-    color: rgba(68, 68, 68, 0.829);
+    color: white;
     margin-top: 22px;
     font-size: 14px;
     font-weight: 600;
@@ -30,22 +30,18 @@
     outline:none;
     background: none;
     font-size: 18px;
-    color: #555;
-    border-radius: 25px;
-    box-shadow: inset 8px 8px 8px #cbced1,
-                inset -8px -8px 8px #ffffff;
+    color: white;
     padding: 10px;
+    border-bottom: 1px solid white;
 }
 .form input:focus
 {
     background: none;
-    box-shadow: inset 8px 8px 8px #cbced1,
-                inset -8px -8px 8px #ffffff;
 }
 .form  input::placeholder
 {
     font-size: 13px;
-    color: rgba(0, 0, 0, 0.473);
+    color: rgba(255, 255, 255, 0.719);
 }
 .log-button{
     outline: none;
@@ -59,9 +55,8 @@
     font-weight: 700;
     color:#fff;
     text-align: center;
-    background: #202c45d8;
-    box-shadow: 3px 3px 8px #b1b1b1,
-                -3px -3px 8px #ffffff;
+    background: none;
+    border: 1px solid #E9992B;
     transition: 0.5s;
     margin: 20px 0;
 }
@@ -78,16 +73,17 @@
     font-size: 16px;
     font-weight: 700;
     color:rgb(250, 245, 245);
+    
+    background: none;
+    border: 1px solid #E9992B;
     text-align: center;
-    background: #A7B0EA;
-    box-shadow: 3px 3px 8px #b1b1b1,
-                -3px -3px 8px #ffffff;
     transition: 0.5s;
     margin-bottom: 10px;
 }
 
 .form p
 {
+    color: white;
     font-size: 14px;
 }
 .form a

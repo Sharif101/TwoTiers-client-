@@ -1,12 +1,12 @@
 .nav
 {
-    background: #EFE2DC!important;
+    background: #242424!important;
     border: none!important;
     box-shadow: 13px 0px 17px #cbced1, -13px 9px 20px #fff;
 }
 .nav-title
 {
-    color: #6C53E2 !important;
+    color: #F6992B !important;
     text-decoration: none;
     font-size: 20px;
     font-weight: 800;
@@ -15,14 +15,14 @@
 
 .nav-logo
 {
-    width: 10%;
+    width: 6%;
     border-radius: 50%;
     margin-right: 10px;
 }
 
 .navbar-nav a
 {
-    color: #6C53E2;
+    color: #F6992B;
     text-decoration: none;
     margin: 0 8px;
     font-size: 16px;
@@ -30,7 +30,16 @@
 }
 .navbar-nav a:hover
 {
-    color: #6C53E2;
+    color: #F6992B;
+}
+
+.log-btn
+{
+    padding: 5px 10px;
+    background: none;
+    color: #F6992B;
+    border: 1px solid #F6992B;
+    border-radius: 20px;
 }
 
 .acc-img
@@ -68,8 +77,11 @@
     }
     .nav-logo
 {
-    width: 30%;
+    width: 25%;
     margin-right: 5px;
+}
+.navbar-toggler-icon {
+   fill: white !important;
 }
 .nav-title
 {

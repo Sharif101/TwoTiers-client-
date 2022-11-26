@@ -8,8 +8,8 @@ import app from "../../firebase/firebase.confiq";
 
 const auth = getAuth(app);
 const Register = () => {
-  let title = "Shutter Up -Register";
-  document.title = title;
+  // let title = "Shutter Up -Register";
+  // document.title = title;
   let { createUser } = useContext(AuthContext);
   // console.log("user", createUser);
   let navigate = useNavigate();

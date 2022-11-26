@@ -3,7 +3,7 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceSmileBeam } from "@fortawesome/free-solid-svg-icons";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
 import "./Login.css";
 import { useContext } from "react";
 
@@ -13,8 +13,8 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import Loader from "../../Utilities/Loader/Loader";
 
 const Login = () => {
-  let title = "";
-  document.title = title;
+  // let title = "";
+  // document.title = title;
   let [error, setError] = useState("");
 
   let { providerlogin, githubLogin, signIn, loading } = useContext(AuthContext);
@@ -83,8 +83,8 @@ const Login = () => {
     <div>
       <Form className="form" onSubmit={handleSubmit}>
         <h3>
-          Please Login here{" "}
-          <FontAwesomeIcon icon={faFaceSmileBeam}></FontAwesomeIcon>
+          {/* Please Login here{" "} */}
+          <FontAwesomeIcon icon={faLock}></FontAwesomeIcon>
         </h3>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

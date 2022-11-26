@@ -2,8 +2,8 @@ import React from "react";
 import "./Error.css";
 
 const Error = () => {
-  let title = "Shutter Up -Error";
-  document.title = title;
+  // let title = "-Error";
+  // document.title = title;
   return (
     <div>
       <div className="error">

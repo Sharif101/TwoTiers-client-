@@ -2,8 +2,8 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 
 const Blog = () => {
-  let title = "Shutter Up -Blog";
-  document.title = title;
+  // let title = " -Blog";
+  // document.title = title;
   return (
     <div>
       <Accordion className="mt-5" defaultActiveKey={["0"]} alwaysOpen>

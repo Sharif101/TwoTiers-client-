@@ -29,17 +29,6 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        <ul class="menu">
-          <li>
-            <Link>Home</Link>
-          </li>
-          <li>
-            <Link>About</Link>
-          </li>
-          <li>
-            <Link>Contact Us</Link>
-          </li>
-        </ul>
         <div class="footer-copyright">
           <p>Copyright @ 2022 Sharif.</p>
         </div>

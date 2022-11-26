@@ -13,7 +13,7 @@
 }
 
 footer{
-    background-color: #272727;
+    background-color: #272727fa;
     text-align: center;
     text-transform: uppercase;
     padding-top: 30px;
@@ -27,15 +27,15 @@ footer li{
 }
 
 .icons a{
-    background: #52527a;
-    color: #272727;
-    padding: 14px;
+    background: #f69b2bdc;
+    color: white;
+    padding: 10px;
     font-size: 20px;
     border-radius: 100%;
     display: flex;
 }
 .icons a:hover{
-    color: #ffffff;
+    color: #F6992B;
     transition: 0.5s;
 }
 
@@ -49,8 +49,8 @@ footer li{
 }
 
 .footer-copyright{
-    background-color:#52527a;
-    color: #ffffff;
+    background-color:#242424;
+    color: #F6992B;
     padding: 15px;
     margin-top: 30px;
     text-transform: capitalize;

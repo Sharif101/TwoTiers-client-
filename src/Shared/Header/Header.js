@@ -3,12 +3,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
-// import logo from "../../assest/logo2.png";
+import logo from "../../assest/logo.png";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import "./Header.css";
 
 const Header = () => {
@@ -26,9 +26,9 @@ const Header = () => {
       <Navbar expand="lg" className="nav">
         <Container>
           <Navbar.Brand>
-            {/* <img className="nav-logo" src={logo} alt="" /> */}
+            <img className="nav-logo" src={logo} alt="" />
             <Link to="/" className="nav-title">
-              siuuuuuuuuu
+              Two Tires
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -59,18 +59,18 @@ const Header = () => {
               )}
 
               {user?.uid ? (
-                <Button
+                <button
                   className="log-btn"
                   variant="info"
                   onClick={handleSingout}
                 >
                   Log Out
-                </Button>
+                </button>
               ) : (
                 <Link to="/login">
-                  <Button className="log-btn" variant="info">
+                  <button className="log-btn" variant="info">
                     Log in
-                  </Button>
+                  </button>
                 </Link>
               )}
             </Nav>
