@@ -10,7 +10,7 @@ import { useContext } from "react";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { useState } from "react";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
-import Loader from "../../Utilities/Loader/Loader";
+// import Loader from "../../Utilities/Loader/Loader";
 
 const Login = () => {
   // let title = "";
@@ -24,7 +24,8 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
 
   if (loading) {
-    return <Loader></Loader>;
+    // return <Loader></Loader>;
+    <p>loading</p>;
   }
 
   const googleProvider = new GoogleAuthProvider();

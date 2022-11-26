@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import app from "../../firebase/firebase.confiq";
+import "./Register.css";
 
 const auth = getAuth(app);
 const Register = () => {
@@ -94,6 +95,25 @@ const Register = () => {
             required
           />
         </Form.Group>
+        <div class="radio-grp">
+          <ul>
+            <li>
+              <input type="radio" id="f-option" name="selector" />
+              <label for="f-option">User</label>
+
+              <div class="check"></div>
+            </li>
+
+            <li>
+              <input type="radio" id="s-option" name="selector" />
+              <label for="s-option">Seller</label>
+
+              <div class="check">
+                <div class="inside"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
         <button className="log-button">Register</button>
       </Form>
     </div>
