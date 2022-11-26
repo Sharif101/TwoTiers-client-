@@ -1,0 +1,108 @@
+.form
+{
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 14px;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1,
+                -13px -13px 20px #ffffff;
+    padding: 30px 20px;
+}
+.form h3
+{
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #202C45;
+}
+.form label
+{
+    color: rgba(68, 68, 68, 0.829);
+    margin-top: 22px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.form input{
+    border: none;
+    outline:none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1,
+                inset -8px -8px 8px #ffffff;
+    padding: 10px;
+}
+.form input:focus
+{
+    background: none;
+    box-shadow: inset 8px 8px 8px #cbced1,
+                inset -8px -8px 8px #ffffff;
+}
+.form  input::placeholder
+{
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.473);
+}
+.log-button{
+    outline: none;
+    border:none;
+    cursor: pointer;
+    width:100%;
+    /* height: 60px; */
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    color:#fff;
+    text-align: center;
+    background: #202c45d8;
+    box-shadow: 3px 3px 8px #b1b1b1,
+                -3px -3px 8px #ffffff;
+    transition: 0.5s;
+    margin: 20px 0;
+}
+
+.social-singup button
+{
+    outline: none;
+    border:none;
+    cursor: pointer;
+    width:100%;
+    /* height: 60px; */
+    padding: 6px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    color:rgb(250, 245, 245);
+    text-align: center;
+    background: #A7B0EA;
+    box-shadow: 3px 3px 8px #b1b1b1,
+                -3px -3px 8px #ffffff;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.form p
+{
+    font-size: 14px;
+}
+.form a
+{
+    margin-left: 5px;
+}
+
+.form .err 
+{
+    color: red;
+    margin: 10px 0 !important;
+}
+@media screen and (max-width:576px) {
+    .form
+    {
+        width: 100%;
+    }
+}
