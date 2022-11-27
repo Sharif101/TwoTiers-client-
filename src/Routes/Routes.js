@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Bikes from "../Bikes/Bikes";
 import Main from "../Layout/Main";
 import Blog from "../Pages/Blog/Blog";
 import Dashboard from "../Pages/Dashboard/Dashboard";
@@ -15,6 +16,9 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: async () => {
+          return fetch("http://localhost:5000/categories");
+        },
         element: <Home></Home>,
       },
       {
@@ -28,6 +32,13 @@ export const routes = createBrowserRouter([
             <Dashboard></Dashboard>
           </Privateroute>
         ),
+      },
+      {
+        path: "/category/:id",
+        loader: async ({ params }) => {
+          return fetch(` http://localhost:5000/bikes/${params.id}`);
+        },
+        element: <Bikes></Bikes>,
       },
       {
         path: "/login",

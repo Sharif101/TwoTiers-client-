@@ -43,6 +43,20 @@
     margin-right: 10px;
     color: #ecb130;
 }
+.categories
+{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap : 20px;
+}
+.catagory h2
+{
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 @media screen and (max-width:576px) {
     .slide img
     {

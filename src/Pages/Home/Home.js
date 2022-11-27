@@ -8,8 +8,12 @@ import bannerpic from "../../assest/harley-1921700__340.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
+import { useLoaderData } from "react-router-dom";
+import Categories from "../Categories/Categories";
 
 const Home = () => {
+  let categories = useLoaderData();
+  console.log(categories);
   return (
     <div>
       <Carousel>
@@ -78,9 +82,17 @@ const Home = () => {
       </div>
       <hr />
 
-      {/* ----------------choise ur brand-------------------- */}
-      <div className="catagories">
-        <h2>Choise ur brand</h2>
+      {/* ---------Categories-------choise ur brand-------------------- */}
+      <div className="catagory">
+        <h2>Choise your brand</h2>
+        <div className="categories">
+          {categories.map((categories) => (
+            <Categories
+              categories={categories}
+              key={categories._id}
+            ></Categories>
+          ))}
+        </div>
       </div>
     </div>
   );
