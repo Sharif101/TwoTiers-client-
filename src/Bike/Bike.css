@@ -1,5 +1,4 @@
 .sell-info {
-    color: white;
     margin-top: 30px;
 }
 
@@ -7,10 +6,12 @@
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
+    color: #82a9f7e3;
 }
 
 .sell-info p{
     margin-left: 20px;
     font-size: 14px;
     font-weight: 500;
+    color: rgb(109, 109, 109);
 }

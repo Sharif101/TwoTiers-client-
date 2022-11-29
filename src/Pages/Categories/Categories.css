@@ -6,10 +6,12 @@
 }
 .card-cour
 {
-    box-shadow: 13px 13px 20px #dfe1e4,
-                -13px -0px 20px #ffffff;
-    border-radius: 10px;
-    background: #1d1d1de0 !important;
+    -webkit-border-radius: 8px;
+border-radius: 8px;
+background: #edeff3d0 !important;
+-webkit-box-shadow: 7px 7px 11px #cfd3da, -7px -7px 11px #ffffff;
+box-shadow: 7px 7px 11px #cfd3da, -7px -7px 11px #ffffff;
+border: none !important;
 
 }
 

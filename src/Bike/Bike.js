@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Bookingmodal from "../Pages/Bookingmodal/Bookingmodal";
 import "./Bike.css";
 
 const Bike = ({ bike }) => {
@@ -38,6 +39,8 @@ const Bike = ({ bike }) => {
             </div>
           </Card.Text>
           {/* <button className="explore">Explore</button> */}
+          {/* --------modal---------- */}
+          <Bookingmodal bike={bike}></Bookingmodal>
         </Card.Body>
       </Card>
     </div>

@@ -1,5 +1,5 @@
 import { getAuth, updateProfile } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import Form from "react-bootstrap/Form";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -16,7 +16,15 @@ const Register = () => {
   let navigate = useNavigate();
   let location = useLocation();
 
+  let [role, setRole] = useState("buyer");
+
   let from = location.state?.from?.pathname || "/";
+
+  let handleChange = (e) => {
+    let info = e.target;
+    let value = info.value;
+    setRole(value);
+  };
 
   let handleSubmit = (event) => {
     event.preventDefault();
@@ -45,6 +53,22 @@ const Register = () => {
 
         form.reset();
         navigate(from, { replace: true });
+        const currentUser = {
+          name: name,
+          email: email,
+          img: photourl,
+          roleIndentify: role,
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data))
+          .catch((err) => console.error(err));
       })
       .catch((error) => {
         console.log(error);
@@ -98,14 +122,28 @@ const Register = () => {
         <div class="radio-grp">
           <ul>
             <li>
-              <input type="radio" id="f-option" name="selector" />
-              <label for="f-option">User</label>
+              <input
+                onChange={handleChange}
+                type="radio"
+                id="f-option"
+                name="selector"
+                value="Buyer"
+                checked={role === "Buyer"}
+              />
+              <label for="f-option">Buyer</label>
 
               <div class="check"></div>
             </li>
 
             <li>
-              <input type="radio" id="s-option" name="selector" />
+              <input
+                onChange={handleChange}
+                type="radio"
+                id="s-option"
+                name="selector"
+                value="Seller"
+                checked={role === "Seller"}
+              />
               <label for="s-option">Seller</label>
 
               <div class="check">

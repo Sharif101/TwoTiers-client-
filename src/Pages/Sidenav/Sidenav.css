@@ -1,0 +1,28 @@
+.sidenav
+{
+    -webkit-border-radius: 8px;
+border-radius: 8px;
+background: #f4f5f8;
+-webkit-box-shadow: 7px 7px 11px #cfd3da, -7px -7px 11px #ffffff;
+box-shadow: 7px 7px 11px #cfd3da, -7px -7px 11px #ffffff;
+margin-top: 20px;
+}
+
+.sidenav  p
+{
+    border-radius: 20px;
+    text-align: center;
+    color: #E9992B !important;
+    padding: 5px 0;
+}
+.sidenav a
+{
+    text-decoration: none;
+    color: #82a9f7be;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sidenav a:hover{
+    color: #82a9f7be;
+}
