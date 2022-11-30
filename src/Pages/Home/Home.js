@@ -17,7 +17,7 @@ const Home = () => {
   console.log(categories);
   const [ad, setAd] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/advertise")
+    fetch("https://resale-wine.vercel.app/advertise")
       .then((res) => res.json())
       .then((data) => setAd(data));
   }, []);

@@ -13,7 +13,7 @@ const MyProduct = () => {
   // const [myOrders, setmyOrders] = useState([]);
 
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/bike/${user?.email}`)
+  //   fetch(`https://resale-wine.vercel.app/bike/${user?.email}`)
   //     .then((res) => res.json())
   //     .then((data) => setmyOrders(data));
   // }, []);
@@ -23,7 +23,7 @@ const MyProduct = () => {
   const handleDelete = (_id) => {
     const proceed = window.confirm("Are you sure to delete this ?");
     if (proceed) {
-      fetch(`http://localhost:5000/bikes/${_id}`, {
+      fetch(`https://resale-wine.vercel.app/bikes/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

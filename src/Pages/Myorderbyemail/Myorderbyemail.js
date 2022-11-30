@@ -33,7 +33,7 @@ const Myorderbyemail = ({ order, handleDelete }) => {
       purchase_year: purchase_year,
       status,
     };
-    fetch("http://localhost:5000/advertise", {
+    fetch("https://resale-wine.vercel.app/advertise", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -11,7 +11,7 @@ const AllSeller = () => {
   const handleDelete = (_id) => {
     const proceed = window.confirm("Are you sure to delete this ?");
     if (proceed) {
-      fetch(`http://localhost:5000/users/${_id}`, {
+      fetch(`https://resale-wine.vercel.app/users/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

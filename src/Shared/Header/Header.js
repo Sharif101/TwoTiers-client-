@@ -36,7 +36,6 @@ const Header = () => {
             <Nav className="ms-auto">
               <Link to="/">Home</Link>
               <Link to="/blog">Blog</Link>
-              <Link to="/dashboard">Dashboard</Link>
 
               {/* -------------------------- */}
 
@@ -60,13 +59,16 @@ const Header = () => {
               )}
 
               {user?.uid ? (
-                <button
-                  className="log-btn"
-                  variant="info"
-                  onClick={handleSingout}
-                >
-                  Log Out
-                </button>
+                <>
+                  <Link to="/dashboard">Dashboard</Link>
+                  <button
+                    className="log-btn"
+                    variant="info"
+                    onClick={handleSingout}
+                  >
+                    Log Out
+                  </button>
+                </>
               ) : (
                 <Link to="/login">
                   <button className="log-btn" variant="info">

@@ -23,7 +23,7 @@ const Bike = ({ bike }) => {
       item_id: _id,
       time: new Date(),
     };
-    fetch(`http://localhost:5000/reportedItem/${_id}`, {
+    fetch(`https://resale-wine.vercel.app/reportedItem/${_id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

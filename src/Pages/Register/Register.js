@@ -59,7 +59,7 @@ const Register = () => {
           img: photourl,
           roleIndentify: role,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://resale-wine.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

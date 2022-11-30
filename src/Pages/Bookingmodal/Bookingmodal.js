@@ -31,7 +31,7 @@ const Bookingmodal = ({ bike }) => {
 
     const orders = { name, username, useremail, re_price, number, location };
     console.log("aaa", orders);
-    fetch("http://localhost:5000/allorders", {
+    fetch("https://resale-wine.vercel.app/allorders", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -23,7 +23,7 @@ export const routes = createBrowserRouter([
       {
         path: "/",
         loader: async () => {
-          return fetch("http://localhost:5000/categories");
+          return fetch("https://resale-wine.vercel.app/categories");
         },
         element: <Home></Home>,
       },
@@ -38,14 +38,14 @@ export const routes = createBrowserRouter([
           {
             path: "allseller",
             loader: async () => {
-              return fetch("http://localhost:5000/members/Seller");
+              return fetch("https://resale-wine.vercel.app/members/Seller");
             },
             element: <AllSeller></AllSeller>,
           },
           {
             path: "allbuyers",
             loader: async () => {
-              return fetch("http://localhost:5000/members/Buyer");
+              return fetch("https://resale-wine.vercel.app/members/Buyer");
             },
             element: <AllBuyer></AllBuyer>,
           },
@@ -56,21 +56,25 @@ export const routes = createBrowserRouter([
           {
             path: "myorders/:email",
             loader: async ({ params }) => {
-              return fetch(`http://localhost:5000/order/${params.email}`);
+              return fetch(
+                `https://resale-wine.vercel.app/order/${params.email}`
+              );
             },
             element: <MyOrders></MyOrders>,
           },
           {
             path: "reportitem",
             loader: async () => {
-              return fetch("http://localhost:5000/reportedItem");
+              return fetch("https://resale-wine.vercel.app/reportedItem");
             },
             element: <ReportedItem></ReportedItem>,
           },
           {
             path: "myproudct/:email",
             loader: async ({ params }) => {
-              return fetch(`http://localhost:5000/bike/${params.email}`);
+              return fetch(
+                `https://resale-wine.vercel.app/bike/${params.email}`
+              );
             },
             element: <MyProduct></MyProduct>,
           },
@@ -79,7 +83,7 @@ export const routes = createBrowserRouter([
       {
         path: "/category/:id",
         loader: async ({ params }) => {
-          return fetch(` http://localhost:5000/bikes/${params.id}`);
+          return fetch(` https://resale-wine.vercel.app/bikes/${params.id}`);
         },
         element: (
           <Privateroute>
