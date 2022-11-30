@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./Myorderbyemail.css";
 
 const Myorderbyemail = ({ order }) => {
@@ -52,10 +52,16 @@ const Myorderbyemail = ({ order }) => {
               <h5>Using year:</h5> <p>{years_of_use}</p>
             </div>
             <div className="d-flex">
+              <h5>Purchase year:</h5> <p>{purchase_year}</p>
+            </div>
+            <div className="d-flex">
               <h5>Seller Name:</h5> <p>{seller_name}</p>
             </div>
             <div className="d-flex">
               <h5>Location:</h5> <p> {location}</p>
+            </div>
+            <div className="d-flex">
+              <h5>Description:</h5> <p> {description}</p>
             </div>
           </Card.Text>
           {/* <button className="explore">Explore</button> */}

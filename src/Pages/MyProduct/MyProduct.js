@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+// import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+// import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import Myorderbyemail from "../Myorderbyemail/Myorderbyemail";
 
 const MyProduct = () => {
   let myproducts = useLoaderData();
-  let { user } = useContext(AuthContext);
+  // let { user } = useContext(AuthContext);
   console.log(myproducts);
 
   // const [myOrders, setmyOrders] = useState([]);
