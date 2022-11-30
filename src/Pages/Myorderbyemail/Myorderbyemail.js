@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 // import { Link } from "react-router-dom";
 import "./Myorderbyemail.css";
 
-const Myorderbyemail = ({ order }) => {
+const Myorderbyemail = ({ order, handleDelete }) => {
   let {
     name,
     img,
@@ -17,6 +17,7 @@ const Myorderbyemail = ({ order }) => {
     purchase_year,
     status,
     description,
+    _id,
   } = order;
   return (
     <div>
@@ -64,7 +65,10 @@ const Myorderbyemail = ({ order }) => {
               <h5>Description:</h5> <p> {description}</p>
             </div>
           </Card.Text>
-          {/* <button className="explore">Explore</button> */}
+          <button className="explore">Advertise</button>
+          <button className="explore" onClick={() => handleDelete(_id)}>
+            Delete
+          </button>
         </Card.Body>
       </Card>
     </div>

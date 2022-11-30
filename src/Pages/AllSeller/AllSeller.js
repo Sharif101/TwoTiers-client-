@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AllSellercard from "../AllSellercard/AllSellercard";
+import toast, { Toaster } from "react-hot-toast";
 
 const AllSeller = () => {
   let sellers = useLoaderData();
@@ -17,7 +18,7 @@ const AllSeller = () => {
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            alert("Deleted Successfully");
+            toast.success("Delete Successfully");
             const remaining = mySeller.filter((del) => del._id !== _id);
             setMySeller(remaining);
           }
@@ -26,6 +27,7 @@ const AllSeller = () => {
   };
   return (
     <div>
+      <Toaster position="top-center" reverseOrder={false} />
       {mySeller.map((seller) => (
         <AllSellercard
           seller={seller}
