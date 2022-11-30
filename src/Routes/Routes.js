@@ -10,6 +10,7 @@ import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyOrders from "../Pages/MyOrders/MyOrders";
+import MyProduct from "../Pages/MyProduct/MyProduct";
 import Register from "../Pages/Register/Register";
 import ReportedItem from "../Pages/ReportedItem/ReportedItem";
 import Privateroute from "./Privateroute";
@@ -36,10 +37,16 @@ export const routes = createBrowserRouter([
         children: [
           {
             path: "allseller",
+            loader: async () => {
+              return fetch("http://localhost:5000/members/Seller");
+            },
             element: <AllSeller></AllSeller>,
           },
           {
             path: "allbuyers",
+            loader: async () => {
+              return fetch("http://localhost:5000/members/Buyer");
+            },
             element: <AllBuyer></AllBuyer>,
           },
           {
@@ -53,6 +60,10 @@ export const routes = createBrowserRouter([
           {
             path: "reportitem",
             element: <ReportedItem></ReportedItem>,
+          },
+          {
+            path: "myproudct",
+            element: <MyProduct></MyProduct>,
           },
         ],
       },
