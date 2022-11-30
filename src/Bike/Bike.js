@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Bookingmodal from "../Pages/Bookingmodal/Bookingmodal";
+import toast, { Toaster } from "react-hot-toast";
 import "./Bike.css";
 
 const Bike = ({ bike }) => {
@@ -12,9 +13,36 @@ const Bike = ({ bike }) => {
     original_price,
     years_of_use,
     seller_name,
+    _id,
   } = bike;
+
+  const handleReportToAdmin = (_id) => {
+    const reportedItem = {
+      name: name,
+      img: img,
+      item_id: _id,
+      time: new Date(),
+    };
+    fetch(`http://localhost:5000/reportedItem/${_id}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reportedItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Successfully Reported!");
+        } else {
+          toast.error("Something went worng.");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
   return (
     <div>
+      <Toaster position="top-center" reverseOrder={false} />
       <Card className="card-cour">
         <Card.Img className="card-img" variant="top" src={img} />
         <Card.Body className="card-bd">
@@ -41,6 +69,9 @@ const Bike = ({ bike }) => {
           {/* <button className="explore">Explore</button> */}
           {/* --------modal---------- */}
           <Bookingmodal bike={bike}></Bookingmodal>
+          <button className="explore" onClick={() => handleReportToAdmin(_id)}>
+            Report
+          </button>
         </Card.Body>
       </Card>
     </div>
