@@ -54,7 +54,10 @@ export const routes = createBrowserRouter([
             element: <AddProduct></AddProduct>,
           },
           {
-            path: "myorders",
+            path: "myorders/:email",
+            loader: async ({ params }) => {
+              return fetch(`http://localhost:5000/order/${params.email}`);
+            },
             element: <MyOrders></MyOrders>,
           },
           {

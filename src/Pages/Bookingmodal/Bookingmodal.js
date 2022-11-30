@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 
 const Bookingmodal = ({ bike }) => {
   let { user } = useContext(AuthContext);
+  console.log(bike);
 
   const { name, resale_price } = bike;
   const [show, setShow] = useState(false);
@@ -13,14 +14,23 @@ const Bookingmodal = ({ bike }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [orders, setOrders] = useState({});
+  // const [orders, setOrders] = useState({});
 
   const time = new Date();
   const [currentTime, setcurrentTime] = useState(time);
 
   const handleAddUser = (event) => {
     event.preventDefault();
-    console.log(orders);
+    const form = event.target;
+    const name = form.name.value;
+    const username = form.username.value;
+    const useremail = form.useremail.value;
+    const re_price = form.re_price.value;
+    const number = form.number.value;
+    const location = form.location.value;
+
+    const orders = { name, username, useremail, re_price, number, location };
+    console.log("aaa", orders);
     fetch("http://localhost:5000/allorders", {
       method: "POST",
       headers: {
@@ -36,20 +46,20 @@ const Bookingmodal = ({ bike }) => {
         }
       });
   };
-  const handleInputBlur = (event) => {
-    const field = event.target.name;
-    const value = event.target.value;
-    let time = new Date();
-    setcurrentTime(time);
-    const newOrder = { ...orders, currentTime };
-    newOrder[field] = value;
-    setOrders(newOrder);
-  };
+  // const handleInputBlur = (event) => {
+  //   const field = event.target.name;
+  //   const value = event.target.value;
+  //   let time = new Date();
+  //   setcurrentTime(time);
+  //   const newOrder = { ...orders, currentTime };
+  //   newOrder[field] = value;
+  //   setOrders(newOrder);
+  // };
   return (
     <div>
       <Toaster position="top-center" reverseOrder={false} />
       <>
-        <button className="book_btn" onClick={handleShow}>
+        <button className="explore" onClick={handleShow}>
           Book Now
         </button>
 
@@ -68,7 +78,7 @@ const Bookingmodal = ({ bike }) => {
                   placeholder="Name"
                   defaultValue={name}
                   disabled
-                  onBlur={handleInputBlur}
+                  // onBlur={handleInputBlur}
                   name="name"
                 />
               </Form.Group>
@@ -81,7 +91,7 @@ const Bookingmodal = ({ bike }) => {
                   placeholder="user name"
                   defaultValue={user?.displayName}
                   disabled
-                  onBlur={handleInputBlur}
+                  // onBlur={handleInputBlur}
                   name="username"
                 />
               </Form.Group>
@@ -94,7 +104,7 @@ const Bookingmodal = ({ bike }) => {
                   placeholder="user email"
                   defaultValue={user?.email}
                   disabled
-                  onBlur={handleInputBlur}
+                  // onBlur={handleInputBlur}
                   name="useremail"
                 />
               </Form.Group>
@@ -107,7 +117,7 @@ const Bookingmodal = ({ bike }) => {
                   placeholder="Price"
                   defaultValue={resale_price}
                   disabled
-                  onBlur={handleInputBlur}
+                  // onBlur={handleInputBlur}
                   name="re_price"
                 />
               </Form.Group>
@@ -119,7 +129,7 @@ const Bookingmodal = ({ bike }) => {
                 <Form.Control
                   type="number"
                   placeholder="Number"
-                  onBlur={handleInputBlur}
+                  // onBlur={handleInputBlur}
                   name="number"
                 />
               </Form.Group>
@@ -130,21 +140,20 @@ const Bookingmodal = ({ bike }) => {
                 <Form.Control
                   type="text"
                   placeholder="meeting location"
-                  onBlur={handleInputBlur}
+                  // onBlur={handleInputBlur}
                   name="location"
                 />
               </Form.Group>
+              <button
+                className="text-center book_btn pe-5 ps-5"
+                onClick={handleClose}
+                type="submit"
+              >
+                Submit
+              </button>
             </Form>
           </Modal.Body>
-          <Modal.Footer className="mx-auto p-0 pb-2">
-            <button
-              className="text-center book_btn pe-5 ps-5"
-              onClick={handleClose}
-              type="submit"
-            >
-              Submit
-            </button>
-          </Modal.Footer>
+          <Modal.Footer className="mx-auto p-0 pb-2"></Modal.Footer>
         </Modal>
       </>
     </div>
