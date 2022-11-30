@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 // import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 import "./Myorderbyemail.css";
 
 const Myorderbyemail = ({ order, handleDelete }) => {
@@ -19,8 +20,36 @@ const Myorderbyemail = ({ order, handleDelete }) => {
     description,
     _id,
   } = order;
+
+  const handleAdvertise = () => {
+    const advertise = {
+      name: name,
+      img: img,
+      item_id: _id,
+      time: new Date(),
+      resale_price: resale_price,
+      original_price: original_price,
+      years_of_use: years_of_use,
+      purchase_year: purchase_year,
+      status,
+    };
+    fetch("http://localhost:5000/advertise", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(advertise),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Successfully adversitse");
+        }
+      });
+  };
   return (
     <div>
+      <Toaster position="top-center" reverseOrder={false} />
       <Card className="card-cour">
         <Card.Img className="card-img" variant="top" src={img} />
         <Card.Body className="card-bd">
@@ -65,7 +94,9 @@ const Myorderbyemail = ({ order, handleDelete }) => {
               <h5>Description:</h5> <p> {description}</p>
             </div>
           </Card.Text>
-          <button className="explore">Advertise</button>
+          <button className="explore" onClick={() => handleAdvertise(_id)}>
+            Advertise
+          </button>
           <button className="explore" onClick={() => handleDelete(_id)}>
             Delete
           </button>

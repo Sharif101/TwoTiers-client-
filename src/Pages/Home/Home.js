@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import pic1 from "../../assest/pexels-photo-2393821.jpeg";
@@ -10,10 +10,17 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import "./Home.css";
 import { useLoaderData } from "react-router-dom";
 import Categories from "../Categories/Categories";
+import Advertise from "../Advertise/Advertise";
 
 const Home = () => {
   let categories = useLoaderData();
   console.log(categories);
+  const [ad, setAd] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/advertise")
+      .then((res) => res.json())
+      .then((data) => setAd(data));
+  }, []);
   return (
     <div>
       <Carousel>
@@ -39,6 +46,15 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
 
+      {/* ----------------------------------------- */}
+      <div className="catagory">
+        <h2>Advertise</h2>
+        <div className="categories">
+          {ad.map((adver) => (
+            <Advertise adver={adver} key={adver._id}></Advertise>
+          ))}
+        </div>
+      </div>
       {/* ----------------------------------------- */}
 
       <div className="section-bikes">
