@@ -59,6 +59,9 @@ export const routes = createBrowserRouter([
           },
           {
             path: "reportitem",
+            loader: async () => {
+              return fetch("http://localhost:5000/reportedItem");
+            },
             element: <ReportedItem></ReportedItem>,
           },
           {

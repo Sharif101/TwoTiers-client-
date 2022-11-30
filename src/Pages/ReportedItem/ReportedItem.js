@@ -1,9 +1,18 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import ReportedItemshow from "../ReportedItemshow/ReportedItemshow";
 
 const ReportedItem = () => {
+  let reporteditem = useLoaderData();
+  console.log(reporteditem);
   return (
-    <div>
-      <h2>reportedd item</h2>
+    <div className="bikes">
+      {reporteditem.map((reportitem) => (
+        <ReportedItemshow
+          reportitem={reportitem}
+          key={reportitem._id}
+        ></ReportedItemshow>
+      ))}
     </div>
   );
 };
