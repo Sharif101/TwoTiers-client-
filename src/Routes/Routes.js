@@ -62,7 +62,10 @@ export const routes = createBrowserRouter([
             element: <ReportedItem></ReportedItem>,
           },
           {
-            path: "myproudct",
+            path: "myproudct/:email",
+            loader: async ({ params }) => {
+              return fetch(`http://localhost:5000/bike/${params.email}`);
+            },
             element: <MyProduct></MyProduct>,
           },
         ],
